@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Favorite Food Details</h1>
+
+<div class="row">
+    <div class="col s6 col-offset-3">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ favoritefood.name }}</span>
+                <p>{{ favoritefood.description }}</p>
+                <p>{{ favoritefood.cost }}</p>
+            </div>
+            <div class="card-action">
+                <a href="{% url 'favoritefood_update' favoritefood.id %}">Edit</a>
+                <a href="{% url 'favoritefood_delete' favoritefood.id %}">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

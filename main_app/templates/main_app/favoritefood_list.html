@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Favorite Foods</h1>
+
+    {% for food in favoritefood_list %}
+        <a href="{% url 'favoritefood_detail' food.id %}">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">{{ food.name }}</span>
+                    <p>{{ food.description }}</p>
+                    <p>{{ food.cost }}</p>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+
+{% endblock %}
